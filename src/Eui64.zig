@@ -23,7 +23,7 @@ pub fn format(self: *const Eui64, writer: *Writer) Writer.Error!void {
     try writer.flush();
 }
 
-test "format" {
+test format {
     const eui64: Eui64 = .{
         .bytes = [8]u8{ 0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF },
     };
@@ -60,7 +60,7 @@ pub fn fromLiteral(literal: []const u8) Error!Eui64 {
     };
 }
 
-test "fromLiteral" {
+test fromLiteral {
     try testing.expectEqual(try Eui64.fromLiteral("01:23:45:67:89:ab:cd:ef"), Eui64{ .bytes = [8]u8{ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef } });
     try testing.expectEqual(try Eui64.fromLiteral("01:23:45:67:89:Ab:Cd:Ef"), Eui64{ .bytes = [8]u8{ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef } });
     try testing.expectEqual(try Eui64.fromLiteral("01:23:45:67:89:AB:CD:EF"), Eui64{ .bytes = [8]u8{ 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef } });
