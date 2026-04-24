@@ -28,7 +28,7 @@ test format {
         .bytes = [8]u8{ 0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF },
     };
     const formatted = std.fmt.comptimePrint("{f}", .{eui64});
-    try std.testing.expect(std.mem.eql(u8, formatted, "01-23-45-67-89-AB-CD-EF"));
+    try testing.expect(std.mem.eql(u8, formatted, "01-23-45-67-89-AB-CD-EF"));
 }
 
 /// Accepts "-" or ":" as separators (e.g. 01-23-45-67-89-AB-CD-EF).

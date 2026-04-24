@@ -2,7 +2,7 @@
     .name = .eui,
     .version = "0.1.0",
     .fingerprint = 0xd77b8496c9a3f7f8,
-    .minimum_zig_version = "0.16.0-dev.3059+42e33db9d",
+    .minimum_zig_version = "0.16.0",
     .dependencies = .{},
     .paths = .{
         "build.zig",
